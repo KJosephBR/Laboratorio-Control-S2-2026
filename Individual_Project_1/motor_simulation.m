@@ -20,16 +20,43 @@ clear;
 clc;
 close all;
 
+%% Parameter input function
+function value = read_parameter(prompt)
+
+    while true
+
+        user_input = input(prompt, 's');
+
+        % Check for empty input.
+        if isempty(strtrim(user_input))
+            fprintf('Warning: input cannot be empty. Please enter a value.\n');
+            continue;
+        end
+
+        % Convert the input text to a number.
+        value = str2double(user_input);
+
+        % Check for invalid or non-numeric input.
+        if isnan(value) || ~isfinite(value)
+            fprintf('Warning: please enter a valid numeric value.\n');
+            continue;
+        end
+
+        break;
+    end
+
+end
+
 %% Input parameters
 fprintf('DC Motor First-Order Model\n');
 fprintf('===========================\n');
 fprintf('Enter the motor parameters:\n\n');
 
-Kt = input('Kt - Torque constant [N*m/A]: ');
-Ra = input('Ra - Armature resistance [Ohm]: ');
-b  = input('b  - Viscous friction coefficient [N*m*s/rad]: ');
-Kb = input('Kb - Back-EMF constant [V*s/rad]: ');
-J  = input('J  - Motor and load inertia [kg*m^2]: ');
+Kt = read_parameter('Kt - Torque constant [N*m/A]: ');
+Ra = read_parameter('Ra - Armature resistance [Ohm]: ');
+b  = read_parameter('b  - Viscous friction coefficient [N*m*s/rad]: ');
+Kb = read_parameter('Kb - Back-EMF constant [V*s/rad]: ');
+J  = read_parameter('J  - Motor and load inertia [kg*m^2]: ');
 
 %% Input validation
 % Check that all values are real, finite and physically valid.
