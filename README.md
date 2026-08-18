@@ -3,6 +3,6 @@
 **Professor:** Luis Carlos Rosales Alpizar
 
 **Students:**   
-Berrocal Rodríguez Kevin Joseph 
+Berrocal Rodríguez Kevin Joseph - 2020113094
 
 This repository is for assignments and projects documentation of the course EL-5409 Laboratorio de Control automático.
