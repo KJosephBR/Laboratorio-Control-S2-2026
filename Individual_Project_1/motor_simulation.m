@@ -3,7 +3,7 @@
 % Transfer function: G(s) = K_M / (tau*s + 1)
 % Student: Kevin Joseph Berrocal Rodríguez
 % Student ID: 2020113094
-% Course: Automatic Control
+% Course: Automatic Control Lab
 %
 % This script calculates the first-order model of a DC motor from
 % its physical parameters, obtains K_M and tau, and generates the
